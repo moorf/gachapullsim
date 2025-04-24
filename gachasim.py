@@ -95,7 +95,7 @@ print(f"radiances: {radiancescounter}, radiance resets: {radianceresetcounter}")
 average = np.median(fv)
 print(f"The average pulls to get 5star is: {average}")
 average = np.mean(fvgot)
-print(f"The average chance to get wanted char in banner is: {average}")
+print(f"Characters per banner is: {average}")
 
 print("### ---------------------------------------")
 print("### 700eur scenario genshin")
@@ -210,7 +210,7 @@ for j in range(tries):
 average = np.median(fv)
 print(f"The average pulls to get 5star is: {average}")
 average = np.mean(fvgot)
-print(f"The average chance to get wanted char in banner is: {average} ")
+print(f"Characters per banner is: {average} ")
 
 print("### ---------------------------------------")
 print("### 700eur scenario exedra")
@@ -244,7 +244,7 @@ for i in range(tries):
 average = np.median(fv)
 print(f"The average pulls to get 5star is: {average}")
 average = np.mean(fvgot)
-print(f"The average chance to get wanted char in banner is: {average} (accounting trader)")
+print(f"Characters per banner is: {average} (accounting trader)")
 print("### ---------------------------------------")
 print(f"### saving scenario exedra ({pullcount}) ")
 import random
@@ -281,7 +281,7 @@ for j in range(tries):
 average = np.median(fv)
 print(f"The average pulls to get 5star is: {average}")
 average = np.mean(fvgot)
-print(f"The average chance to get wanted char in banner is: {average} (accounting trader)")
+print(f"Characters per banner is: {average} (accounting trader)")
 
 
 

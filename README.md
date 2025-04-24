@@ -1,2 +1,29 @@
 # gachapullsim
 simulating gacha pulls in madoka exedra, genshin impact
+
+### ---------------------------------------
+### f2p scenario genshin (40)
+radiances: 13575, radiance resets: 195885
+The average pulls to get 5star is: 77.0
+The average chance to get wanted char in banner is: 0.405739
+### ---------------------------------------
+### 700eur scenario genshin
+283
+radiances: 94978, radiance resets: 1371038
+The average pulls to get 5star is: 77.0
+avg characters per banner is: 2.840663
+### ---------------------------------------
+### f2p scenario exedra (40)
+40
+The average pulls to get 5star is: 22.0
+The average chance to get wanted char in banner is: 0.302581 
+### ---------------------------------------
+### 700eur scenario exedra
+333
+The average pulls to get 5star is: 69.0
+The average chance to get wanted char in banner is: 2.942995 (accounting trader)
+### ---------------------------------------
+### saving scenario exedra (40) 
+40
+The average pulls to get 5star is: 93.0
+The average chance to get wanted char in banner is: 0.38901 (accounting trader)

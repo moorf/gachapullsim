@@ -282,6 +282,65 @@ average = np.median(fv)
 print(f"The average pulls to get 5star is: {average}")
 average = np.mean(fvgot)
 print(f"Characters per banner is: {average} (accounting trader)")
-
+print("### ---------------------------------------")
+print(f"### f2p scenario wuwa ({pullcount})")
+import random
+pulls = pullcount
+camellyapulls = np.array([1913, 1959, 1894, 1786, 1791, 1698, 1786, 1726, 1673, 1607, 1600, 1537, 1601, 1585, 1614, 1583, 1577, 1511, 1492, 1539, 1525, 1502, 1513, 1414, 1463, 1389, 1389, 1513, 1434, 1409, 1378, 1379, 1355, 1377, 1361, 1252, 1344, 1314, 1235, 1261, 1324, 1242, 1235, 1219, 1232, 1219, 1219, 1165, 1204, 1172, 1145, 1106, 1151, 1150, 1091, 1131, 1091, 1134, 1149, 1149, 1151, 1174, 1187, 1160, 1214, 5833, 9835, 12778, 14595, 14943, 16147, 14915, 11338, 7503, 3910, 1863, 615, 123, 19, 9])
+totalpulls = np.sum(camellyapulls)
+#print(totalpulls)
+array = camellyapulls
+normalized_array = array / totalpulls
+#print(normalized_array)
+fv = []
+fvgot = []
+counter = 0
+hadfive = 0
+pullsreal = 0
+fifty = 0
+for j in range(tries):
+    pullie = max(pulls, pullsreal)
+    for i in range(pullie):
+        pullsreal = 0
+        counter+=1
+        if counter >= 80: #hard pity
+            fifty = max(int(random.random() > 0.5),fifty)#50/50 gate 
+            if fifty == 1: #won
+                fifty = 0 #next is 50/50
+                fv.append(counter) #in which pull we get the character
+                hadfive += 1 #got limited wanted 5 star
+                pullsreal = pullie + pulls - i #save the rest of the pulls for next try
+                counter = 0 #reset pity
+                break #do not continue pulling
+            else:
+                fifty = 1 #next is 100%
+                counter = 0 #reset pity
+                #no break, continue pulling
+            continue
+        if random.random() < normalized_array[counter]: #accounting soft pity
+            fifty = max(int(random.random() > 0.5),fifty) #50/50 gate 
+            if fifty == 1: #won
+                fv.append(counter) #in which pull we get the character
+                fifty = 0 #next is 50/50
+                hadfive += 1 #got limited wanted 5 star
+                pullsreal = pullie + pulls - i #save the rest of the pulls for next try
+                #pulls is const (you get 40 on avg for each banner)
+                # pullie is (pulls + saved from prev banner)
+                #i is (pullie - done pulls)
+                counter = 0 #reset pity
+                break #do not continue pulling
+            else:
+                fifty = 1 #next is 100%
+                counter = 0 #reset pity
+                #no break, continue pulling
+    if hadfive==1:
+        hadfive=0
+        fvgot.append(1) #have got wanted limited 5*
+    else:
+        fvgot.append(0) #have not got wanted limited 5*
+average = np.median(fv)
+print(f"The average pulls to get 5star is: {average}")
+average = np.mean(fvgot)
+print(f"Characters per banner is: {average}")
 
 

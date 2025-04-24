@@ -30,7 +30,6 @@ The average pulls to get 5star is: 93.0
 Characters per banner is: 0.38901 (accounting trader)
 ### ---------------------------------------
 ### f2p scenario wuwa (40)
-radiances: 0, radiance resets: 1
 The average pulls to get 5star is: 69.0
 
 Characters per banner is: 0.462173
